@@ -1,7 +1,7 @@
-"""project URL Configuration
 
+"""project URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,15 +16,12 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
-
+from django.urls import include, path
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include('recipes.urls')),
-    # aninhamento de urls. Tudo que vier abaixo de "" se torna acessivel
-    # path("recipes/", include('recipes.urls')),
-
+    path('admin/', admin.site.urls),
+    path('', include('recipes.urls')),
+    path('authors/', include('authors.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
