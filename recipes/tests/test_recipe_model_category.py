@@ -1,10 +1,10 @@
 from django.core.exceptions import ValidationError
-
+from typing import Any
 from .test_recipe_base import RecipeTestBase
 
 
 class RecipeCategoryModelTest(RecipeTestBase):
-    def setUp(self) -> None:
+    def setUp(self) -> Any:
         self.category = self.make_category(
             name='Category Testing'
         )

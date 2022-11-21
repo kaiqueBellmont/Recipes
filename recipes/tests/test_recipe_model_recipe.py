@@ -1,11 +1,12 @@
 from django.core.exceptions import ValidationError
 from parameterized import parameterized
+from typing import Any
 
 from .test_recipe_base import Recipe, RecipeTestBase
 
 
 class RecipeModelTest(RecipeTestBase):
-    def setUp(self) -> None:
+    def setUp(self) -> Any:
         self.recipe = self.make_recipe()
         return super().setUp()
 
