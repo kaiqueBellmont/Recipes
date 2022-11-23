@@ -38,6 +38,7 @@ class AuthorsRegisterTest(AuthorsBaseTest):
             first_name_field.send_keys(Keys.ENTER)
             form = self.get_form()
             self.assertIn('Write your first name', form.text)
+
         self.form_field_test_with_callback(callback)
 
     def test_empty_last_name_error_message(self):
@@ -47,6 +48,7 @@ class AuthorsRegisterTest(AuthorsBaseTest):
             last_name_field.send_keys(Keys.ENTER)
             form = self.get_form()
             self.assertIn('Write your last name', form.text)
+
         self.form_field_test_with_callback(callback)
 
     def test_empty_username_error_message(self):
@@ -56,6 +58,7 @@ class AuthorsRegisterTest(AuthorsBaseTest):
             username_field.send_keys(Keys.ENTER)
             form = self.get_form()
             self.assertIn('This field must not be empty', form.text)
+
         self.form_field_test_with_callback(callback)
 
     def test_invalid_email_error_message(self):
@@ -65,6 +68,7 @@ class AuthorsRegisterTest(AuthorsBaseTest):
             email_field.send_keys(Keys.ENTER)
             form = self.get_form()
             self.assertIn('The e-mail must be valid.', form.text)
+
         self.form_field_test_with_callback(callback)
 
     def test_passwords_do_not_match(self):
@@ -76,6 +80,7 @@ class AuthorsRegisterTest(AuthorsBaseTest):
             password2.send_keys(Keys.ENTER)
             form = self.get_form()
             self.assertIn('Password and password2 must be equal', form.text)
+
         self.form_field_test_with_callback(callback)
 
     def test_user_valid_data_register_successfully(self):
