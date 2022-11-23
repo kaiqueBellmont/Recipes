@@ -1,10 +1,9 @@
 from unittest import TestCase
 
+from authors.forms import RegisterForm
 from django.test import TestCase as DjangoTestCase
 from django.urls import reverse
 from parameterized import parameterized
-
-from authors.forms import RegisterForm
 
 
 class AuthorRegisterFormUnitTest(TestCase):
@@ -23,14 +22,14 @@ class AuthorRegisterFormUnitTest(TestCase):
 
     @parameterized.expand([
         ('username', (
-                'Username must have letters, numbers or one of those @.+-_. '
-                'The length should be between 4 and 150 characters.'
+            'Username must have letters, numbers or one of those @.+-_. '
+            'The length should be between 4 and 150 characters.'
         )),
         ('email', 'The e-mail must be valid.'),
         ('password', (
-                'Password must have at least one uppercase letter, '
-                'one lowercase letter and one number. The length should be '
-                'at least 8 characters.'
+            'Password must have at least one uppercase letter, '
+            'one lowercase letter and one number. The length should be '
+            'at least 8 characters.'
         )),
     ])
     def test_fields_help_text(self, field, needed):
